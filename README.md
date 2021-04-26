@@ -1,8 +1,9 @@
 
 
 # Object Tracking with SiamMask
-- This is the project repository for CS585 final project#3 object tracking
-- Group Member: Lifu Zhang, Hin Lui Shum, Anjana Srivastava, Trivikram Ranga 
+This is the project repository for CS585 final project#3 object tracking
+
+Group Member: Lifu Zhang, Hin Lui Shum, Anjana Srivastava, Trivikram Ranga 
 
 
 ## Problem Definition
@@ -10,8 +11,8 @@ Object Tracking: taking an initial bounding box, creating a unique ID for each o
 
 ## Method
 1. Environment setup
-2. Training base model
-3. Training refine model
+2. Training SiamMask base model
+3. Training SiamMask refine model
 
 ## Environment setup
 This code has been tested on MacOS
@@ -59,7 +60,7 @@ and [ImageNet-VID](http://image-net.org/challenges/LSVRC/2015/).
 1. Testing on DAVIS dataset
 2. Recycling video demo
 
-## Testing on Davis
+## Testing on Davis dataset
 
 ## Recycling video demo
 
@@ -74,8 +75,8 @@ python ../../tools/new-demo.py --resume SiamMask_DAVIS.pth --config config_davis
 ```
 
 ## Discussion
-- SiamMask is a robust and powerful MOT model with the ability to produce accurate results in real time 
-- SiamMask generates accurate mask, and simultaneously produce minimal enclosing rectangle as the bounding box
-- With reasonable amount of training time, we can achieve results that is compared to the pretrained model released by author
-- Model sometimes fails when the object being tracked does not have very distinct boundary or intersect with other objects.
-- As a side effort, we made slight changes to allow multiple ROIs in tools/new-demo.py
+- SiamMask is a robust and powerful MOT model with the ability to produce accurate results with fast speed.
+- SiamMask generates accurate mask, and simultaneously produce minimal enclosing rectangle as the bounding box.
+- With reasonable amount of training time, we can achieve results that is comparable to that of pretrained model released by author.
+- Model fails sometimes when the object being tracked does not have very distinct boundary or intersect with other objects.
+- As a side effort, we made slight changes to allow multiple initial tracking objects (ROI) in tools/new-demo.py
