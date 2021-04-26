@@ -1,5 +1,4 @@
 
-https://user-images.githubusercontent.com/36130616/116123990-b01b9b00-a691-11eb-9223-e92993bb2033.mov
 
 # SiamMaskUpdated
 An updated version of SiamMask (CVPR2019) with slight changes to demo functionality, allowing for multiple ROIs
@@ -59,12 +58,10 @@ and [ImageNet-VID](http://image-net.org/challenges/LSVRC/2015/).
 
 ## Recycling video demo
 
+https://user-images.githubusercontent.com/36130616/116123990-b01b9b00-a691-11eb-9223-e92993bb2033.mov
 
 - Run `new-demo.py`
-
 ```shell
-https://user-images.githubusercontent.com/36130616/116124069-cd506980-a691-11eb-9755-8d7203afc805.mov
-
 
 cd $SiamMask/experiments/siammask_sharp
 export PYTHONPATH=$PWD:$PYTHONPATH
