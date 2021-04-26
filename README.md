@@ -1,5 +1,15 @@
 # SiamMaskUpdated
-An updated version of SiamMask (CVPR2019) with slight changes to demo functionality, allowing for multiple ROIs and writing video outputs on Mac environment.
+An updated version of SiamMask (CVPR2019) with slight changes to demo functionality, allowing for multiple ROIs
+
+## Problem Definition
+Object Tracking: taking an initial bounding box, creating a unique ID for each of the initial targets, and then tracking each of them as they move around frames in a video, maintaining the ID assignment.
+
+## Method
+- Environment setup
+- Training base model
+- Training refine model
+- Testing on DAVIS 2016
+- Recycling video demo
 ## Environment setup
 This code has been tested on MacOS
 
@@ -29,20 +39,29 @@ export PYTHONPATH=$PWD:$PYTHONPATH
 Download from https://github.com/OlafenwaMoses/ImageAI/releases/download/1.0/resnet50_coco_best_v2.0.1.h5
 add under SiamMaskUpdated/experiments/siammask_sharp
 ```
-## Demo
-- [Setup](#environment-setup) your environment
-- Download the SiamMask model
-```shell
-cd $SiamMask/experiments/siammask_sharp
-wget http://www.robots.ox.ac.uk/~qwang/SiamMask_VOT.pth
-wget http://www.robots.ox.ac.uk/~qwang/SiamMask_DAVIS.pth
-```
+## Training base model
+- Download the [Youtube-VOS](https://youtube-vos.org/dataset/download/), 
+[COCO](http://cocodataset.org/#download), 
+[ImageNet-DET](http://image-net.org/challenges/LSVRC/2015/), 
+and [ImageNet-VID](http://image-net.org/challenges/LSVRC/2015/).
+- Preprocess each datasets according the [readme](data/coco/readme.md) files.
+- Download the pre-trained resnet model (174 MB)
+- we trained for 17 epoches on 4 GPUs for 10 hours
+
+## Training Refine module
+- In the experiment file, train with the best SiamMask base model checkpoint_16.pth
+- we trained for 19 epoches on 4 GPUs for 12 hours
+
+## Testing on Davis
+
+## Recycling video demo
+
+
 - Run `new-demo.py`
 
 ```shell
 cd $SiamMask/experiments/siammask_sharp
 export PYTHONPATH=$PWD:$PYTHONPATH
 python ../../tools/new-demo.py --resume SiamMask_DAVIS.pth --config config_davis.json
-(edit input file path if needed)
 ```
 
