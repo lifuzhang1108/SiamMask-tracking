@@ -1,7 +1,9 @@
 
 
-# SiamMaskUpdated
-An updated version of SiamMask (CVPR2019) with slight changes to demo functionality, allowing for multiple ROIs
+# Object Tracking with SiamMask
+- This is the project repository for CS585 final project#3 object tracking
+- Group Member: Lifu Zhang, Hin Lui Shum, Anjana Srivastava, Trivikram Ranga 
+
 
 ## Problem Definition
 Object Tracking: taking an initial bounding box, creating a unique ID for each of the initial targets, and then tracking each of them as they move around frames in a video, maintaining the ID assignment.
@@ -76,3 +78,4 @@ python ../../tools/new-demo.py --resume SiamMask_DAVIS.pth --config config_davis
 - SiamMask generates accurate mask, and simultaneously produce minimal enclosing rectangle as the bounding box
 - With reasonable amount of training time, we can achieve results that is compared to the pretrained model released by author
 - Model sometimes fails when the object being tracked does not have very distinct boundary or intersect with other objects.
+- As a side effort, we made slight changes to allow multiple ROIs in tools/new-demo.py
