@@ -1,5 +1,5 @@
-# SiamMask
-
+# SiamMaskUpdated
+An updated version of SiamMask (CVPR2019) with slight changes to demo functionality, allowing for multiple ROIs and writing video outputs on Mac environment.
 ## Environment setup
 This code has been tested on MacOS
 
@@ -13,17 +13,11 @@ export SiamMask=$PWD
 pip install virtualenv
 virtualenv --python=python3.6 .venv
 source .venv/bin/activate
+pip install -r requirements.txt
 pip install pathos
 pip install imageai==2.0.2
-pip uninstall Keras
 pip install Keras==2.2.5
 pip install tensorflow==1.15
-```
-- Setup python environment
-```
-conda create -n siammask python=3.6
-source activate siammask
-pip install -r requirements.txt
 bash make.sh
 ```
 - Add the project to your PYTHONPATH
