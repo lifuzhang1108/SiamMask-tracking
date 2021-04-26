@@ -7,11 +7,10 @@ An updated version of SiamMask (CVPR2019) with slight changes to demo functional
 Object Tracking: taking an initial bounding box, creating a unique ID for each of the initial targets, and then tracking each of them as they move around frames in a video, maintaining the ID assignment.
 
 ## Method
-- Environment setup
-- Training base model
-- Training refine model
-- Testing on DAVIS 2016
-- Recycling video demo
+1. Environment setup
+2. Training base model
+3. Training refine model
+
 ## Environment setup
 This code has been tested on MacOS
 
@@ -53,6 +52,10 @@ and [ImageNet-VID](http://image-net.org/challenges/LSVRC/2015/).
 ## Training Refine module
 - In the experiment file, train with the best SiamMask base model checkpoint_16.pth
 - we trained for 19 epoches on 4 GPUs for 12 hours
+- 
+## Results
+1. Testing on DAVIS dataset
+2. Recycling video demo
 
 ## Testing on Davis
 
@@ -68,3 +71,8 @@ export PYTHONPATH=$PWD:$PYTHONPATH
 python ../../tools/new-demo.py --resume SiamMask_DAVIS.pth --config config_davis.json
 ```
 
+## Discussion
+- SiamMask is a robust and powerful MOT model with the ability to produce accurate results in real time 
+- SiamMask generates accurate mask, and simultaneously produce minimal enclosing rectangle as the bounding box
+- With reasonable amount of training time, we can achieve results that is compared to the pretrained model released by author
+- Model sometimes fails when the object being tracked does not have very distinct boundary or intersect with other objects.
