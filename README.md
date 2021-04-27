@@ -55,12 +55,14 @@ and [ImageNet-VID](http://image-net.org/challenges/LSVRC/2015/).
 ## Training Refine module
 - In the experiment file, train with the best SiamMask base model checkpoint_16.pth
 - we trained for 19 epoches on 4 GPUs for 12 hours
+- select the best model as the final model, in our case checkpoint_19.pth
 - 
 ## Results
 1. Testing on DAVIS dataset
 2. Recycling video demo
 
 ## Testing on Davis dataset
+![Screen Shot 2021-04-27 at 1 13 13 PM](https://user-images.githubusercontent.com/36130616/116283983-8da18480-a75a-11eb-9a59-eb0fb96ca7b1.png)
 
 ## Recycling video demo
 
