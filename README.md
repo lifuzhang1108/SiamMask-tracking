@@ -28,10 +28,6 @@ pip install virtualenv
 virtualenv --python=python3.6 .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-pip install pathos
-pip install imageai==2.0.2
-pip install Keras==2.2.5
-pip install tensorflow==1.15
 bash make.sh
 ```
 - Add the project to your PYTHONPATH
